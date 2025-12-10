@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>WC Finder Hi-fi Preview</title>
+<style>
+  :root {
+    --green: #16A34A;
+    --amber: #F59E0B;
+    --red: #EF4444;
+    --bg: #F8FAFC;
+    --card: #FFFFFF;
+    --line: #E5E7EB;
+    --text: #0F172A;
+    --muted: #6B7280;
+  }
+  body {
+    margin: 0;
+    background: radial-gradient(circle at 20% 20%, #ecfdf3 0, transparent 35%),
+                radial-gradient(circle at 80% 0%, #e0f2fe 0, transparent 40%),
+                #e5e7eb;
+    font-family: "Inter", system-ui;
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    flex-wrap: wrap;
+  }
+  .screen {
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,.08);
+  }
+  svg { display: block; }
+  text { font-family: "Inter", system-ui; }
+</style>
+</head>
+<body>
+
+<!-- 01 登录 / 引导 -->
+<div class="screen">
+<svg width="260" height="560" viewBox="0 0 260 560">
+<defs>
+  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#22c55e"/>
+    <stop offset="1" stop-color="#16a34a"/>
+  </linearGradient>
+</defs>
+<rect width="260" height="560" fill="var(--bg)"/>
+<rect x="0" y="0" width="260" height="140" fill="url(#g1)"/>
+<text x="18" y="36" fill="#ECFDF3" font-size="18" font-weight="700">WC Finder</text>
+<text x="18" y="62" fill="#ECFDF3" font-size="14">随时找到干净、就近的厕所</text>
+<rect x="18" y="170" width="224" height="48" rx="12" fill="#F3F4F6" stroke="#E5E7EB"/>
+<text x="32" y="200" fill="#6B7280" font-size="14">手机号 / 邮箱</text>
+<rect x="18" y="226" width="224" height="48" rx="12" fill="#F3F4F6" stroke="#E5E7EB"/>
+<text x="32" y="256" fill="#6B7280" font-size="14">验证码 / 密码</text>
+<rect x="18" y="282" width="224" height="48" rx="12" fill="#22C55E"/>
+<text x="108" y="312" fill="#fff" font-size="16" font-weight="700">登录</text>
+<rect x="18" y="336" width="224" height="44" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="94" y="364" fill="#16A34A" font-size="14" font-weight="700">注册 / 快捷</text>
+<text x="18" y="394" fill="#6B7280" font-size="12">自动登录</text>
+<rect x="200" y="382" width="36" height="18" rx="9" fill="#16A34A" opacity="0.25"/>
+<circle cx="218" cy="391" r="8" fill="#16A34A"/>
+<text x="18" y="426" fill="#94A3B8" font-size="12">支持 Apple / 微信 / 邮箱 登录</text>
+<rect x="0" y="504" width="260" height="56" fill="#FFFFFF" stroke="#E5E7EB" />
+<text x="42" y="536" fill="#16A34A" font-size="12" font-weight="700">寻找</text>
+<text x="122" y="536" fill="#6B7280" font-size="12" font-weight="700">排行</text>
+<text x="194" y="536" fill="#6B7280" font-size="12" font-weight="700">我的</text>
+</svg>
+</div>
+
+<!-- 02 寻找 - 地图 + 筛选 -->
+<div class="screen">
+<svg width="260" height="560" viewBox="0 0 260 560">
+<rect width="260" height="560" fill="var(--bg)"/>
+<rect x="16" y="14" width="228" height="42" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="30" y="40" fill="#6B7280" font-size="14">搜索附近厕所 / 关键词</text>
+<rect x="16" y="62" width="228" height="24" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="26" y="79" fill="#16A34A" font-size="12" font-weight="700">附近</text>
+<text x="70" y="79" fill="#6B7280" font-size="12">开放</text>
+<text x="112" y="79" fill="#6B7280" font-size="12">免费</text>
+<text x="154" y="79" fill="#6B7280" font-size="12">无障碍</text>
+<rect x="16" y="96" width="228" height="360" rx="16" fill="#E0F2FE" stroke="#BAE6FD"/>
+<polyline points="50,420 90,300 130,340 180,200" fill="none" stroke="#0EA5E9" stroke-width="3" opacity=".6"/>
+<circle cx="90" cy="300" r="11" fill="#16A34A"/>
+<circle cx="130" cy="340" r="11" fill="#F59E0B"/>
+<circle cx="180" cy="200" r="11" fill="#EF4444"/>
+<rect x="28" y="118" width="92" height="48" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="38" y="140" fill="#111827" font-size="13" font-weight="700">实时流量</text>
+<rect x="38" y="148" width="72" height="6" rx="3" fill="#DCFCE7"/>
+<rect x="38" y="148" width="36" height="6" rx="3" fill="#16A34A"/>
+<rect x="158" y="118" width="72" height="28" rx="10" fill="#22C55E"/>
+<text x="175" y="137" fill="#fff" font-size="12" font-weight="700">列表视图</text>
+<rect x="196" y="438" width="48" height="48" rx="14" fill="#16A34A"/>
+<text x="206" y="468" fill="#fff" font-size="12" font-weight="700">定位</text>
+<rect x="0" y="504" width="260" height="56" fill="#FFFFFF" stroke="#E5E7EB" />
+<text x="42" y="536" fill="#16A34A" font-size="12" font-weight="700">寻找</text>
+<text x="122" y="536" fill="#6B7280" font-size="12" font-weight="700">排行</text>
+<text x="194" y="536" fill="#6B7280" font-size="12" font-weight="700">我的</text>
+</svg>
+</div>
+
+<!-- 03 寻找 - 地图 + 弹窗（流量色） -->
+<div class="screen">
+<svg width="260" height="560" viewBox="0 0 260 560">
+<rect width="260" height="560" fill="var(--bg)"/>
+<rect x="16" y="14" width="228" height="42" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="30" y="40" fill="#6B7280" font-size="14">搜索附近厕所 / 关键词</text>
+<rect x="16" y="62" width="228" height="24" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="26" y="79" fill="#16A34A" font-size="12" font-weight="700">实时</text>
+<text x="64" y="79" fill="#6B7280" font-size="12">评分</text>
+<text x="102" y="79" fill="#6B7280" font-size="12">距离</text>
+<rect x="16" y="96" width="228" height="360" rx="16" fill="#E0F2FE" stroke="#BAE6FD"/>
+<circle cx="120" cy="220" r="11" fill="#16A34A"/>
+<rect x="70" y="170" width="140" height="90" rx="14" fill="#FFFFFF" stroke="#16A34A"/>
+<text x="82" y="194" fill="#111827" font-size="14" font-weight="700">XX公厕 · 200m</text>
+<text x="82" y="214" fill="#6B7280" font-size="12">评分 4.6 / 免费 / 无障碍</text>
+<rect x="82" y="226" width="48" height="20" rx="8" fill="#DCFCE7"/>
+<text x="88" y="240" fill="#16A34A" font-size="12">人少</text>
+<rect x="140" y="226" width="46" height="20" rx="8" fill="#F3F4F6"/>
+<text x="146" y="240" fill="#111827" font-size="12">纸巾</text>
+<rect x="82" y="252" width="52" height="22" rx="10" fill="#22C55E"/>
+<text x="96" y="268" fill="#fff" font-size="12" font-weight="700">导航</text>
+<rect x="140" y="252" width="54" height="22" rx="10" fill="#F1F5F9" stroke="#E5E7EB"/>
+<text x="154" y="268" fill="#111827" font-size="12" font-weight="700">详情</text>
+<rect x="196" y="438" width="48" height="48" rx="14" fill="#16A34A"/>
+<text x="206" y="468" fill="#fff" font-size="12" font-weight="700">定位</text>
+<rect x="0" y="504" width="260" height="56" fill="#FFFFFF" stroke="#E5E7EB" />
+<text x="42" y="536" fill="#16A34A" font-size="12" font-weight="700">寻找</text>
+<text x="122" y="536" fill="#6B7280" font-size="12" font-weight="700">排行</text>
+<text x="194" y="536" fill="#6B7280" font-size="12" font-weight="700">我的</text>
+</svg>
+</div>
+
+<!-- 04 寻找 - 厕所主页 -->
+<div class="screen">
+<svg width="260" height="560" viewBox="0 0 260 560">
+<defs>
+  <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0ea5e9"/>
+    <stop offset="1" stop-color="#22c55e"/>
+  </linearGradient>
+</defs>
+<rect width="260" height="560" fill="var(--bg)"/>
+<rect x="16" y="16" width="228" height="160" rx="14" fill="url(#g2)"/>
+<text x="28" y="46" fill="#E0F2FE" font-size="14" font-weight="700">厕所主页</text>
+<text x="28" y="70" fill="#FFFFFF" font-size="18" font-weight="800">XX公厕 · 江滨公园</text>
+<text x="28" y="94" fill="#E0F2FE" font-size="12">开放 06:00-23:00 · 提供纸巾</text>
+<rect x="28" y="110" width="50" height="22" rx="10" fill="#F3F4F6"/>
+<text x="32" y="126" fill="#0F172A" font-size="12">4.7星</text>
+<rect x="84" y="110" width="52" height="22" rx="10" fill="#DCFCE7"/>
+<text x="90" y="126" fill="#16A34A" font-size="12">免费</text>
+<rect x="142" y="110" width="64" height="22" rx="10" fill="#F1F5F9"/>
+<text x="150" y="126" fill="#0F172A" font-size="12">无障碍</text>
+<rect x="16" y="190" width="228" height="58" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="28" y="214" fill="#111827" font-size="14" font-weight="700">地址</text>
+<text x="28" y="234" fill="#6B7280" font-size="12">江滨路 100 号 · 距离 200m</text>
+<rect x="16" y="258" width="228" height="70" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="28" y="282" fill="#111827" font-size="14" font-weight="700">设施</text>
+<text x="28" y="302" fill="#6B7280" font-size="12">纸巾 · 烘手机 · 母婴台 · 无障碍 · 夜间照明</text>
+<rect x="16" y="332" width="228" height="118" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="28" y="356" fill="#111827" font-size="14" font-weight="700">用户评论</text>
+<text x="28" y="376" fill="#6B7280" font-size="12">“很干净，靠近河边，纸巾充足”</text>
+<text x="28" y="396" fill="#6B7280" font-size="12">“有无障碍通道，灯光亮”</text>
+<text x="28" y="416" fill="#6B7280" font-size="12">查看更多...</text>
+<rect x="16" y="458" width="108" height="44" rx="12" fill="#16A34A"/>
+<text x="42" y="486" fill="#fff" font-size="14" font-weight="700">导航</text>
+<rect x="136" y="458" width="108" height="44" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="164" y="486" fill="#16A34A" font-size="14" font-weight="700">上传照片</text>
+<rect x="0" y="504" width="260" height="56" fill="#FFFFFF" stroke="#E5E7EB" />
+<text x="42" y="536" fill="#16A34A" font-size="12" font-weight="700">寻找</text>
+<text x="122" y="536" fill="#6B7280" font-size="12" font-weight="700">排行</text>
+<text x="194" y="536" fill="#6B7280" font-size="12" font-weight="700">我的</text>
+</svg>
+</div>
+
+<!-- 05 排行 -->
+<div class="screen">
+<svg width="260" height="560" viewBox="0 0 260 560">
+<rect width="260" height="560" fill="var(--bg)"/>
+<text x="18" y="32" fill="#111827" font-size="18" font-weight="800">排行</text>
+<rect x="18" y="44" width="224" height="30" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="26" y="64" fill="#6B7280" font-size="12">排序：距离 / 评分 / 人流 / 免费</text>
+<rect x="18" y="82" width="224" height="34" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="26" y="104" fill="#16A34A" font-size="12" font-weight="700">附近</text>
+<text x="70" y="104" fill="#6B7280" font-size="12">全城</text>
+<text x="118" y="104" fill="#6B7280" font-size="12">夜间</text>
+<text x="162" y="104" fill="#6B7280" font-size="12">无障碍</text>
+
+<!-- card 1 -->
+<rect x="18" y="124" width="224" height="92" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+<rect x="26" y="134" width="26" height="26" rx="8" fill="#DCFCE7"/>
+<text x="34" y="152" fill="#16A34A" font-size="12" font-weight="800">1</text>
+<text x="62" y="148" fill="#111827" font-size="14" font-weight="700">江滨 XX 公厕</text>
+<text x="62" y="166" fill="#6B7280" font-size="12">200m · 免费 · 无障碍</text>
+<rect x="62" y="178" width="44" height="18" rx="8" fill="#F3F4F6"/>
+<text x="66" y="191" fill="#111827" font-size="11">4.8星</text>
+<rect x="112" y="178" width="48" height="18" rx="8" fill="#DCFCE7"/>
+<text x="118" y="191" fill="#16A34A" font-size="11">人少</text>
+<text x="62" y="210" fill="#6B7280" font-size="12">“干净，有纸巾”</text>
+
+<!-- card 2 -->
+<rect x="18" y="224" width="224" height="92" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+<rect x="26" y="234" width="26" height="26" rx="8" fill="#FEF3C7"/>
+<text x="34" y="252" fill="#F59E0B" font-size="12" font-weight="800">2</text>
+<text x="62" y="248" fill="#111827" font-size="14" font-weight="700">商圈 YY 公厕</text>
+<text x="62" y="266" fill="#6B7280" font-size="12">500m · 收费 · 无障碍</text>
+<rect x="62" y="278" width="44" height="18" rx="8" fill="#F3F4F6"/>
+<text x="66" y="291" fill="#111827" font-size="11">4.2星</text>
+<rect x="112" y="278" width="48" height="18" rx="8" fill="#FEF3C7"/>
+<text x="118" y="291" fill="#F59E0B" font-size="11">一般</text>
+<text x="62" y="310" fill="#6B7280" font-size="12">“人有点多”</text>
+
+<!-- card 3 -->
+<rect x="18" y="324" width="224" height="92" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+<rect x="26" y="334" width="26" height="26" rx="8" fill="#FEE2E2"/>
+<text x="34" y="352" fill="#EF4444" font-size="12" font-weight="800">3</text>
+<text x="62" y="348" fill="#111827" font-size="14" font-weight="700">地铁 ZZ 公厕</text>
+<text x="62" y="366" fill="#6B7280" font-size="12">800m · 免费</text>
+<rect x="62" y="378" width="44" height="18" rx="8" fill="#F3F4F6"/>
+<text x="66" y="391" fill="#111827" font-size="11">3.9星</text>
+<rect x="112" y="378" width="48" height="18" rx="8" fill="#FEE2E2"/>
+<text x="118" y="391" fill="#EF4444" font-size="11">拥挤</text>
+<text x="62" y="410" fill="#6B7280" font-size="12">“排队较长”</text>
+
+<rect x="0" y="504" width="260" height="56" fill="#FFFFFF" stroke="#E5E7EB" />
+<text x="42" y="536" fill="#6B7280" font-size="12" font-weight="700">寻找</text>
+<text x="122" y="536" fill="#16A34A" font-size="12" font-weight="700">排行</text>
+<text x="194" y="536" fill="#6B7280" font-size="12" font-weight="700">我的</text>
+</svg>
+</div>
+
+<!-- 06 我的 -->
+<div class="screen">
+<svg width="260" height="560" viewBox="0 0 260 560">
+<defs>
+  <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#22c55e"/>
+    <stop offset="1" stop-color="#0ea5e9"/>
+  </linearGradient>
+</defs>
+<rect width="260" height="560" fill="var(--bg)"/>
+<rect x="16" y="16" width="228" height="120" rx="14" fill="url(#g3)"/>
+<circle cx="64" cy="62" r="24" fill="#E5E7EB"/>
+<text x="104" y="58" fill="#FFFFFF" font-size="16" font-weight="800">Name</text>
+<text x="104" y="76" fill="#E0F2FE" font-size="12">ID: 123456</text>
+<text x="104" y="94" fill="#E0F2FE" font-size="12">会员 · 到访 23 次</text>
+<rect x="16" y="146" width="228" height="58" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="28" y="180" fill="#111827" font-size="12" font-weight="700">收藏 12</text>
+<text x="108" y="180" fill="#111827" font-size="12" font-weight="700">上传 5</text>
+<text x="188" y="180" fill="#111827" font-size="12" font-weight="700">历史 48</text>
+<rect x="16" y="212" width="228" height="50" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="28" y="244" fill="#111827" font-size="14">我的上传</text>
+<rect x="16" y="268" width="228" height="50" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="28" y="300" fill="#111827" font-size="14">收藏</text>
+<rect x="16" y="324" width="228" height="50" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="28" y="356" fill="#111827" font-size="14">历史</text>
+<rect x="16" y="380" width="228" height="50" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="28" y="412" fill="#111827" font-size="14">反馈 / 评分</text>
+<rect x="16" y="436" width="228" height="50" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+<text x="28" y="468" fill="#111827" font-size="14">设置 / 隐私 / 帮助</text>
+<rect x="0" y="504" width="260" height="56" fill="#FFFFFF" stroke="#E5E7EB" />
+<text x="42" y="536" fill="#6B7280" font-size="12" font-weight="700">寻找</text>
+<text x="122" y="536" fill="#6B7280" font-size="12" font-weight="700">排行</text>
+<text x="194" y="536" fill="#16A34A" font-size="12" font-weight="700">我的</text>
+</svg>
+</div>
+
+</body>
+</html>
+
